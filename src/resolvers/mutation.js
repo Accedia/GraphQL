@@ -27,15 +27,15 @@ const Mutation = {
         const deletedUsers = db.users.splice(userIndex, 1)
 
         db.posts = db.posts.filter((post) => {
-            const match = post.author === args.id
+            const match = post.authorId === args.id
 
             if (match) {
-                db.comments = db.comments.filter((comment) => comment.post !== post.id)
+                db.comments = db.comments.filter((comment) => comment.postId !== post.id)
             }
 
             return !match
         })
-        db.comments = db.comments.filter((comment) => comment.author !== args.id)
+        db.comments = db.comments.filter((comment) => comment.authorId !== args.id)
 
         return deletedUsers[0]
     },

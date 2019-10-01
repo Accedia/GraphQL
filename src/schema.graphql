@@ -26,7 +26,7 @@ input UpdateUserInput {
 }
 
 # TODO: 2. Add input type "CreatePostInput"
-# - Should take title, body, published and author​(type ID)
+# - Should take title, body, published and authorId​(type ID)
 
 type User {
   id: ID!
